@@ -19,6 +19,7 @@
   <modules>
     <module>BootifulApplication</module>
     <module>data-management</module>
+    <module>online-store-microservices</module>
   </modules>
 
   <properties>

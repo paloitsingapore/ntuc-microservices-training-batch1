@@ -1,7 +1,7 @@
-package com.ntuc.income.demo.api;
+package com.ntuc.income.order.api;
 
-import com.ntuc.income.demo.entity.User;
-import com.ntuc.income.demo.repository.UserRepository;
+import com.ntuc.income.order.entity.User;
+import com.ntuc.income.order.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

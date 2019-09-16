@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: /api
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:orderDb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      #http://localhost:8080/api/h2-console/
+  application:
+    name: order-service
+

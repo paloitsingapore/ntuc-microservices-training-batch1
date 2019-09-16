@@ -1,4 +1,4 @@
-package com.ntuc.income.demo.entity;
+package com.ntuc.income.order.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
