@@ -1,0 +1,6 @@
+sever:
+  port: 9090
+
+server:
+  servlet:
+    context-path: /api
