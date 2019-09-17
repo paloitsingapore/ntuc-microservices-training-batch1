@@ -7,7 +7,9 @@ import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import static java.util.stream.Collectors.toList;
@@ -41,9 +43,12 @@ public class OrderService {
   }
 
   @FeignClient(name = "item-service")
-  private interface ItemServiceClient {
+  public interface ItemServiceClient {
 
     @PostMapping(value = "/items/search")
     List<ItemDto> searchItems(List<Long> itemIds);
+
+    @GetMapping("/items/greet")
+    String greetFromItemService();
   }
 }

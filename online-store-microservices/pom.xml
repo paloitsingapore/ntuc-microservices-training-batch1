@@ -19,6 +19,7 @@
     <module>eureka-server</module>
     <module>item-service</module>
     <module>order-service</module>
+    <module>gateway-server</module>
   </modules>
   <dependencies>
     <dependency>
