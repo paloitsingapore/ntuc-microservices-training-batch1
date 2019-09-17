@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/paloitsingapore/ntuc-ms-config.git
+  application:
+    name: config-server
+server:
+  port: 8100

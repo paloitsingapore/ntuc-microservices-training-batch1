@@ -2,6 +2,7 @@ package com.ntuc.income.itemservice;
 
 import com.ntuc.income.itemservice.entity.Item;
 import com.ntuc.income.itemservice.repository.ItemRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
+@Slf4j
 public class ItemServiceApplication { //implements ApplicationRunner {
 
   @Autowired ItemRepository itemRepository;
@@ -26,6 +28,7 @@ public class ItemServiceApplication { //implements ApplicationRunner {
 
   @GetMapping("/greet")
   public String greet() {
+    log.info("Greetings request");
     return "hello";
   }
 

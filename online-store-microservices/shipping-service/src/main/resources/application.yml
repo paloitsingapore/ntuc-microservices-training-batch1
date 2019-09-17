@@ -1,27 +1,5 @@
-server:
-  servlet:
-    context-path: /order
-  port: 8082
-  tomcat:
-    max-http-post-size:
 
 spring:
-  datasource:
-    url: jdbc:h2:mem:orderDb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: password
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true
-  h2:
-    console:
-      enabled: true
-      #http://localhost:8080/api/h2-console/
-  application:
-    name: order-service
-
-
   cloud:
     stream:
       kafka:
@@ -33,7 +11,13 @@ spring:
               mechanism: SCRAM-SHA-256
               jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username="lv6ewheu" password="***REMOVED***";
       bindings:
-        output:
+        input:
           destination: lv6ewheu-order
+  application:
+    name: shipping-service
+
 
 logging.level.org.springframework.cloud.stream: trace
+
+server:
+  port: 8872

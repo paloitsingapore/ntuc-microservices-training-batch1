@@ -1,6 +1,8 @@
 package com.ntuc.income.order;
 
 import com.ntuc.income.order.service.OrderService;
+import javax.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableDiscoveryClient
 @EnableFeignClients  // 1
 @RestController   // 2
+@Slf4j
 public class OrderServiceApplication {
 
   @Autowired              // 3
@@ -25,8 +28,9 @@ public class OrderServiceApplication {
   }
 
   @GetMapping("/hello")       //4
-  public String sayHello(){
-    return itemServiceClient.greetFromItemService();
+  public String sayHello(HttpServletRequest request){
+    log.info("Server Name : {}, Server Port: {}", request.getServerName(), request.getServerPort());
+    return itemServiceClient.greetFromItemService() + " from " + request.getServerPort() ;
   }
 
   //@FeignClient(name="item-service")       //5
